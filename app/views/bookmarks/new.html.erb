@@ -1,0 +1,13 @@
+<h1>New Bookmark</h1>
+
+<%= form_with(model: [@list, @bookmark], url: create_bookmark_path(list_id: @list.id), local: true) do |form| %>
+  <div class="field">
+    <%= form.label :movie_id, "Movie" %>
+    <%= form.collection_select :movie_id, Movie.all, :id, :title, prompt: true %>
+  </div>
+  <div class="field">
+    <%= form.label :comment, "Comment" %>
+    <%= form.text_area :comment %>
+  </div>
+  <%= form.submit 'Bookmark Movie' %>
+<% end %>
