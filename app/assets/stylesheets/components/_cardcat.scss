@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 45vh;
+}
+
+.title-container {
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+
+.card-cat {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 0px;
+  margin-right: 16px;
+}
+
+.button-add {
+  margin-left: 200px;
+}
