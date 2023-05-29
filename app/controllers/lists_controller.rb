@@ -1,6 +1,14 @@
 class ListsController < ApplicationController
   def index
     @lists = List.all
+    @background_images = [
+      'horrormovies.avif',
+      'Le-Loup-de-Wall-Street-1',
+      'Classicmovies.avif'
+      # Ajoutez plus de noms de fichiers d'images selon le nombre de listes
+    ]
+
+    render 'index'
   end
 
   def show

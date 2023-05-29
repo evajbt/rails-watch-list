@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon navbar-custom">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="https://cdn.icon-icons.com/icons2/1954/PNG/512/popcornfood_122741.png" />
@@ -10,11 +10,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
-              <%= link_to 'My lists', lists_path, class: 'nav-link' %>
+                <%= link_to 'My lists', lists_path, class: 'nav-link nav-link-white' %>
             <%# <a class="nav-link" href="#">My lists</a> %>
           </li>
           <li class="nav-item">
-              <%= link_to 'New list', new_list_path, class: 'nav-link' %>
+                <%= link_to 'New list', new_list_path, class: 'nav-link nav-link-white' %>
           </li>
           <li class="nav-item dropdown">
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -34,6 +34,7 @@
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1625&q=80)">
   <h1>Save any kinds of movies</h1>
 </div>
+
 <div class="container">
   <div class="row justify-content-center align-items-center">
     <div class="col">
@@ -41,12 +42,11 @@
         <h1 class="title">My lists</h1>
       </div>
       <div class="card-container d-flex justify-content-between">
-        <div class="card-cat" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80)">
-          Classic
-        </div>
-        <div class="card-cat" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1503925802536-c9451dcd87b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)">
-          Horror
-        </div>
+        <% @lists.each_with_index do |list, index| %>
+          <div class="card-cat" style="background-image: url('/assets/imageslists/<%= @background_images[index] %>');">
+            <%= link_to list.name, list_path(list), style: 'text-decoration: none; color: white;' %>
+          </div>
+        <% end %>
         <div class="button-add">
           <%= link_to 'Add a List', new_list_path, class: 'btn btn-dark' %>
         </div>
@@ -54,8 +54,3 @@
     </div>
   </div>
 </div>
-
-
-<% @lists.each do |list| %>
-  <p><%= link_to list.name, list_path(list) %></p>
-<% end %>
