@@ -1,8 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon navbar-custom">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="https://cdn.icon-icons.com/icons2/1954/PNG/512/popcornfood_122741.png" />
-</a>
+    <%= link_to lists_path, class: 'navbar-brand' do %>
+      <%= image_tag('https://cdn.icon-icons.com/icons2/1954/PNG/512/popcornfood_122741.png') %>
+<% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

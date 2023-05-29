@@ -1,0 +1,23 @@
+// _movies.scss
+.movie-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.star-yellow {
+  color: #FFDF00;
+}
+
+.movie-title {
+  color: black;
+}
+
+.bookmark-text {
+  color: #98506d;
+}
+
+.button-add {
+  margin-top: 10px; /* Ajoutez la marge supérieure souhaitée */
+}

@@ -3,7 +3,7 @@ class ListsController < ApplicationController
     @lists = List.all
     @background_images = [
       'horrormovies.avif',
-      'Le-Loup-de-Wall-Street-1',
+      'Le-Loup-de-Wall-Street-1.jpg',
       'Classicmovies.avif'
       # Ajoutez plus de noms de fichiers d'images selon le nombre de listes
     ]
@@ -11,9 +11,21 @@ class ListsController < ApplicationController
     render 'index'
   end
 
+  # def show
+  #   @list = List.find(params[:id])
+  # end
+
   def show
     @list = List.find(params[:id])
+    @background_images = [
+      'horrormovies.avif',
+      'Le-Loup-de-Wall-Street-1.jpg',
+      'Classicmovies.avif'
+      # Ajoutez plus de noms de fichiers d'images selon le nombre de listes
+    ]
+    @lists = List.all
   end
+
 
   def new
     @list = List.new
